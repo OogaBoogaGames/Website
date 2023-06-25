@@ -1,2 +1,94 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	let inputValue = '';
+
+	function handleInput(event) {
+		const enteredValue = event.target.value;
+		const uppercaseValue = enteredValue.toUpperCase();
+		const lettersOnlyValue = uppercaseValue.replace(/[^A-Z]/g, '');
+		inputValue = lettersOnlyValue;
+	}
+</script>
+
+<h1>Ooga Booga Games</h1>
+
+<div class="form-container">
+	<input
+		type="text"
+		autocapitalize="none"
+		autocorrect="off"
+		autocomplete="off"
+		placeholder="ENTER YOUR ROOM CODE"
+		maxlength={8}
+		bind:value={inputValue}
+		on:input={handleInput}
+	/>
+	<input
+		type="text"
+		autocapitalize="none"
+		autocorrect="off"
+		autocomplete="off"
+		placeholder="ENTER YOUR NAME"
+		maxlength={16}
+	/>
+	<button>Join Game</button>
+</div>
+
+<style lang="scss">
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
+	$primary-color: rgb(151, 151, 151);
+	$secondary-color: #51b2df;
+	$background-color: #363239;
+	:root {
+		background: url('https://media.discordapp.net/attachments/1121939717458514020/1122454022893338736/s.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		backdrop-filter: blur(4px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		font-family: Poppins, sans-serif;
+	}
+	h1 {
+		color: $primary-color;
+		font-size: 3rem;
+		font-weight: 900;
+		margin-bottom: 2rem;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	}
+
+	.form-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		input {
+			border-radius: 12px;
+			padding: 1rem 2rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+			background-color: $secondary-color;
+			text-align: center;
+			color: white;
+			border: none;
+		}
+
+		button {
+			margin-top: 2rem;
+			border-radius: 12px;
+			padding: 1rem 1.5rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+			background-color: $secondary-color;
+			color: white;
+			border: none;
+			cursor: pointer;
+			text-transform: uppercase;
+
+			&:hover {
+				background-color: darken($secondary-color, 10%);
+			}
+		}
+	}
+</style>
