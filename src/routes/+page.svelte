@@ -47,8 +47,8 @@
 
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
-	$primary-color: rgb(151, 151, 151);
-	$secondary-color: #51b2df;
+	$primary-color: #6a787e;
+	$secondary-color: #9bad8c;
 	$background-color: #363239;
 	:root {
 		background: url('https://media.discordapp.net/attachments/1121939717458514020/1122454022893338736/s.png');
@@ -127,7 +127,7 @@
 	    	input {
 	    		border-radius: 12px;
 	    		padding: 1rem 2rem;
-	    		font-size: 1.2rem;
+	    		font-size: 1.1rem;
 	    		font-weight: 600;
 	    		background-color: $secondary-color;
 	    		text-align: center;
