@@ -99,14 +99,14 @@
             .character-form-buttons {
                 button {
                     border-radius: 12px;
-                    padding: 1rem 1.5rem;
+                    padding: 1rem;
                     font-size: 1.2rem;
                     font-weight: 600;
                     background-color: $secondary-color;
                     color: white;
                     border: none;
                     cursor: pointer;
-                    width: 45%;
+                    width: 49%;
                     
                     &:hover {
                         background-color: darken($secondary-color, 10%);
