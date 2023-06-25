@@ -2,6 +2,7 @@
 # OogaBoogaGames Website
 
 The website that powers the soon-to-come game organization: OogaBoogaGames
+
 ## Authors
 
 - [@Endercass](https://www.github.com/Endercass)
