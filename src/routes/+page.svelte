@@ -9,28 +9,40 @@
 	}
 </script>
 
-<h1>Ooga Booga Games</h1>
+<div class="login-container">
+    <h1>Ooga Booga Games</h1>
 
-<div class="form-container">
-	<input
-		type="text"
-		autocapitalize="none"
-		autocorrect="off"
-		autocomplete="off"
-		placeholder="ENTER YOUR ROOM CODE"
-		maxlength={8}
-		bind:value={inputValue}
-		on:input={handleInput}
-	/>
-	<input
-		type="text"
-		autocapitalize="none"
-		autocorrect="off"
-		autocomplete="off"
-		placeholder="ENTER YOUR NAME"
-		maxlength={16}
-	/>
-	<button>Join Game</button>
+    <div class="form-container">
+        <div class="character-form">
+            <img src="https://media.discordapp.net/attachments/1121939717458514020/1122590858861084703/sprite1.png" alt="character" />
+            <div class="character-form-buttons">
+            	<button>←</button>
+            	<button>→</button>
+            </div>
+        </div>
+
+        <div class="room-form">
+        	<input
+        		type="text"
+        		autocapitalize="none"
+        		autocorrect="off"
+        		autocomplete="off"
+        		placeholder="ENTER ROOM CODE"
+        		maxlength={8}
+        		bind:value={inputValue}
+        		on:input={handleInput}
+        	/>
+        	<input
+        		type="text"
+        		autocapitalize="none"
+        		autocorrect="off"
+        		autocomplete="off"
+        		placeholder="ENTER YOUR NAME"
+        		maxlength={16}
+        	/>
+        	<button>Join Game</button>
+        </div>
+    </div>
 </div>
 
 <style lang="scss">
@@ -50,45 +62,95 @@
 		height: 100%;
 		font-family: Poppins, sans-serif;
 	}
-	h1 {
-		color: $primary-color;
-		font-size: 3rem;
-		font-weight: 900;
-		margin-bottom: 2rem;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-	}
 
-	.form-container {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
+    .login-container {
+        padding: 3rem;
 
-		input {
-			border-radius: 12px;
-			padding: 1rem 2rem;
-			font-size: 1.2rem;
-			font-weight: 600;
-			background-color: $secondary-color;
-			text-align: center;
-			color: white;
-			border: none;
-		}
+	    h1 {
+	    	color: $primary-color;
+	    	font-size: 3rem;
+	    	font-weight: 900;
+	    	margin-bottom: 2rem;
+	    	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	    }
 
-		button {
-			margin-top: 2rem;
-			border-radius: 12px;
-			padding: 1rem 1.5rem;
-			font-size: 1.2rem;
-			font-weight: 600;
-			background-color: $secondary-color;
-			color: white;
-			border: none;
-			cursor: pointer;
-			text-transform: uppercase;
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-			&:hover {
-				background-color: darken($secondary-color, 10%);
-			}
-		}
-	}
+        .character-form {
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            width: 40%;
+
+            img {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 12px;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            }
+
+            .character-form-buttons {
+                button {
+                    border-radius: 12px;
+                    padding: 1rem 1.5rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    background-color: $secondary-color;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    width: 45%;
+                    
+                    &:hover {
+                        background-color: darken($secondary-color, 10%);
+                    }
+                }
+            }
+        }
+
+	    .room-form {
+	    	display: flex;
+	    	flex-direction: column;
+            margin-left: auto; 
+            margin-right: 0;
+            width: 50%;
+            
+	    	gap: 1rem;
+
+	    	input {
+	    		border-radius: 12px;
+	    		padding: 1rem 2rem;
+	    		font-size: 1.2rem;
+	    		font-weight: 600;
+	    		background-color: $secondary-color;
+	    		text-align: center;
+	    		color: white;
+	    		border: none;
+	    	}
+
+	    	button {
+	    		margin-top: 2rem;
+	    		border-radius: 12px;
+	    		padding: 1rem 1.5rem;
+	    		font-size: 1.2rem;
+	    		font-weight: 600;
+	    		background-color: $secondary-color;
+	    		color: white;
+	    		border: none;
+	    		cursor: pointer;
+	    		text-transform: uppercase;
+
+	    		&:hover {
+	    			background-color: darken($secondary-color, 10%);
+	    		}
+	    	}
+        }
+    }
 </style>
