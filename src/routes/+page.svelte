@@ -68,7 +68,7 @@
 
 	    h1 {
 	    	color: $primary-color;
-	    	font-size: 3rem;
+	    	font-size: 4rem;
 	    	font-weight: 900;
 	    	margin-bottom: 2rem;
 	    	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
