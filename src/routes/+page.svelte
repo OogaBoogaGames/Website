@@ -26,7 +26,7 @@
 </script>
 
 <div class="front-page">
-	<h1>Ooga&nbsp;Booga&nbsp;Games</h1>
+	<h1>Ooga Booga Games</h1>
 
 	<div class="form-container">
 		<div class="character-form">
@@ -65,6 +65,7 @@
 	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
 	$primary-color: #6a787e;
 	$secondary-color: #9bad8c;
+	$secondary-color-dark: #6d7a62;
 	$background-color: #363239;
 
 	.front-page {
@@ -91,7 +92,7 @@
 				justify-content: center;
 				align-items: center;
 				width: 40%;
-				gap: 1rem;
+				gap: 0.4rem;
 
 				img {
 					width: 100%;
@@ -102,7 +103,7 @@
 				.character-form-buttons {
 					display: flex;
 					width: 100%;
-					gap: 1rem;
+					gap: 0.4rem;
 					button {
 						border-radius: 12px;
 						padding: 1rem;
@@ -114,7 +115,7 @@
 						cursor: pointer;
 						width: 100%;
 						&:hover {
-							background-color: darken($secondary-color, 10%);
+							background-color: $secondary-color-dark;
 						}
 					}
 				}
@@ -151,7 +152,7 @@
 					text-transform: uppercase;
 
 					&:hover {
-						background-color: darken($secondary-color, 10%);
+						background-color: $secondary-color-dark;
 					}
 				}
 			}

@@ -14,8 +14,8 @@
 </div>
 
 <style lang="scss">
-	$primary-color: #55909b;
-	$secondary-color: #316770;
+	$primary-color: #9bad8c;
+	$secondary-color: #6d7a62;
 
 	.navbar {
 		display: flex;
@@ -46,11 +46,12 @@
 			button {
 				height: calc(100% - 1rem);
 				background-color: $secondary-color;
-				padding: 0.5rem 1rem;
+				padding: 0.5rem 1.5rem;
 				color: white;
 				border: none;
 				border-radius: 4px;
 				cursor: pointer;
+				font-size: 1.2rem;
 
 				&:hover {
 					background-color: darken($secondary-color, 10%);
