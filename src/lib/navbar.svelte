@@ -22,7 +22,7 @@
 		align-items: center;
 		justify-content: space-between;
 		background-color: $primary-color;
-		height: 8vh;
+		height: 6vh;
 		width: 100%;
 		color: white;
 		font-size: 24px;
