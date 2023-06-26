@@ -22,7 +22,6 @@
 	}
 	.page-content {
 		display: flex;
-		overflow: scroll;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
