@@ -4,7 +4,7 @@
 	function handleInput(event) {
 		const enteredValue = event.target.value;
 		const uppercaseValue = enteredValue.toUpperCase();
-		const lettersOnlyValue = uppercaseValue.replace(/[^A-Z]/g, '');
+		const lettersOnlyValue = uppercaseValue.replace(/[^0-9A-F]/g, '');
 		inputValue = lettersOnlyValue;
 	}
 </script>
