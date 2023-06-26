@@ -92,7 +92,7 @@
 				justify-content: center;
 				align-items: center;
 				width: 40%;
-				gap: 1rem;
+				gap: 0.4rem;
 
 				img {
 					width: 100%;
@@ -103,7 +103,7 @@
 				.character-form-buttons {
 					display: flex;
 					width: 100%;
-					gap: 1rem;
+					gap: 0.4rem;
 					button {
 						border-radius: 12px;
 						padding: 1rem;
