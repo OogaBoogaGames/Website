@@ -14,8 +14,8 @@
 </div>
 
 <style lang="scss">
-	$primary-color: #55909b;
-	$secondary-color: #316770;
+	$primary-color: #9bad8c;
+	$secondary-color: #6d7a62;
 
 	.navbar {
 		display: flex;
