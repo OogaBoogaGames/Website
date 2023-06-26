@@ -1,5 +1,5 @@
 <script>
-	let character_sprites = ["https://media.discordapp.net/attachments/1121939717458514020/1122590858861084703/sprite1.png", "https://media.discordapp.net/attachments/1121939717458514020/1122590852812918854/sprite2.png"]
+	let character_sprites = ["/sprite1.webp", "/sprite2.webp"]
 	let character_index = 0;
 	let inputValue = '';
 
