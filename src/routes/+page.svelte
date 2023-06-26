@@ -1,4 +1,6 @@
 <script>
+	let character_sprites = ["https://media.discordapp.net/attachments/1121939717458514020/1122590858861084703/sprite1.png", "https://media.discordapp.net/attachments/1121939717458514020/1122590852812918854/sprite2.png"]
+	let character_index = 0;
 	let inputValue = '';
 
 	function handleInput(event) {
@@ -7,6 +9,20 @@
 		const lettersOnlyValue = uppercaseValue.replace(/[^0-9A-F]/g, '');
 		inputValue = lettersOnlyValue;
 	}
+
+	function leftButtonClick() {
+		character_index--;
+		if (character_index < 0) {
+			character_index = character_sprites.length-1;
+		}
+	}
+
+	function rightButtonClick() {
+		character_index++;
+		if (character_index > character_sprites.length-1) {
+			character_index = 0;
+		}
+	}
 </script>
 
 <div class="login-container">
@@ -14,10 +30,10 @@
 
     <div class="form-container">
         <div class="character-form">
-            <img src="https://media.discordapp.net/attachments/1121939717458514020/1122590858861084703/sprite1.png" alt="character" />
+            <img src={character_sprites[character_index]} alt="character" />
             <div class="character-form-buttons">
-            	<button>←</button>
-            	<button>→</button>
+            	<button on:click={leftButtonClick}>←</button>
+            	<button on:click={rightButtonClick}>→</button>
             </div>
         </div>
 
