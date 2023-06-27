@@ -3,6 +3,9 @@
 	let character_index = 0;
 	let inputValue = '';
 
+	/**
+	 * @param {{ target: { value: any; }; }} event
+	 */
 	function handleInput(event) {
 		const enteredValue = event.target.value;
 		const uppercaseValue = enteredValue.toUpperCase();
