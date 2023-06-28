@@ -77,6 +77,8 @@
 			font-weight: 900;
 			margin-bottom: 2rem;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+			text-align: center;
+			font-size: 4rem;
 		}
 
 		.form-container {
