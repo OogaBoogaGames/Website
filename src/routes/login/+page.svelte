@@ -30,6 +30,8 @@
 	$background-color: #363239;
 
 	.front-page {
+        width: 20vw;
+        max-width: 1200px;
 		padding: 5%;
 
 		h1 {
@@ -38,10 +40,10 @@
 			font-weight: 900;
 			margin-bottom: 2rem;
 			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            text-align: center;
 		}
 
 		.form-container {
-			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
@@ -57,8 +59,13 @@
 				input {
 					border-radius: 12px;
 					width: 100%;
-					height: 3.2rem;
-					font-size: clamp(0rem, 1.1rem, 80%);
+                    max-width: 20rem;
+                    min-width: 10rem;
+					height: 6vw;
+                    max-height: 6.4rem;
+                    min-height: 3.2rem;
+                    align-self: center;
+					font-size: 1.2rem;
 					font-weight: 600;
 					background-color: $secondary-color;
 					text-align: center;
@@ -67,11 +74,18 @@
 				}
 
 				button {
-					margin-top: 2rem;
+					margin-top: 1.5rem;
 					border-radius: 12px;
 					padding: 1rem 1.5rem;
-					font-size: 1.2rem;
+                    font-size: 1.2rem;
 					font-weight: 600;
+                    width: 100%;
+                    max-width: 20rem;
+                    min-width: 10rem;
+					height: 6vw;
+                    max-height: 6.4rem;
+                    min-height: 3.2rem;
+                    align-self: center;
 					background-color: $secondary-color;
 					color: white;
 					border: none;
