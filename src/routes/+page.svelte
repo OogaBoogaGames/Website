@@ -62,7 +62,6 @@
 </div>
 
 <style lang="scss">
-	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
 	$primary-color: #6a787e;
 	$secondary-color: #9bad8c;
 	$secondary-color-dark: #6d7a62;

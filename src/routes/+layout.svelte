@@ -9,6 +9,8 @@
 </div>
 
 <style lang="scss">
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
+
 	:global(body) {
 		margin: 0;
 		background: url('https://media.discordapp.net/attachments/1121939717458514020/1122454022893338736/s.png');
@@ -26,7 +28,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		height: 92vh;
+		height: 94vh;
 		font-family: Poppins, sans-serif;
 	}
 </style>
