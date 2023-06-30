@@ -1,7 +1,20 @@
 <script>
+    import { goto } from '$app/navigation';
+
+    let logOutStatus = "Logout";
+
     let account_info = {
         username: "femboy",
         email: "email@gmail.com"
+    }
+
+    function logOutButton() {
+        if (logOutStatus === "Logout") {
+            logOutStatus = "Confirm?";
+        } else {
+            //TODO: log out from account
+            goto('/login', { replaceState: false });
+        }
     }
 
     function checkPassword() {
@@ -17,7 +30,11 @@
 
 <div class="accounts-menu">
     <div class="settings">
+        
+        <button on:click={logOutButton}>{logOutStatus}</button>
+
         <h1>Account Settings</h1>
+        
         <div class="settings-item">
             <h3>Change Username</h3>
             <input type="text" placeholder="{account_info.username}">
