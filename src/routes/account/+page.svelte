@@ -30,9 +30,6 @@
 
 <div class="accounts-menu">
     <div class="settings">
-        
-        <button on:click={logOutButton}>{logOutStatus}</button>
-
         <h1>Account Settings</h1>
         
         <div class="settings-item">
@@ -49,6 +46,9 @@
             <input type="email" placeholder="{account_info.email}">
         </div>
         <button on:click={checkPassword}>Save Changes</button>
+        <br>
+
+        <button on:click={logOutButton} class="log-out-button">{logOutStatus}</button>
     </div>
 </div>
 
@@ -56,7 +56,7 @@
 	$primary-color: #6a787e;
 	$secondary-color: #9bad8c;
 	$secondary-color-dark: #6d7a62;
-	$background-color: #363239;
+	$log-out-color: #c74848;
 
     .accounts-menu {
         width: 96%;
@@ -92,21 +92,29 @@
             }
 
             button {
-					margin-top: 1rem;
-					border-radius: 12px;
-					padding: 1rem 1.5rem;
-					font-size: clamp(0rem, 1.1rem, 80%);
-					font-weight: 600;
-					background-color: $secondary-color;
-					color: white;
-					border: none;
-					cursor: pointer;
-					text-transform: uppercase;
+				margin-top: 1rem;
+				border-radius: 12px;
+				padding: 1rem 1.5rem;
+				font-size: clamp(0rem, 1.1rem, 80%);
+				font-weight: 600;
+				background-color: $secondary-color;
+				color: white;
+				border: none;
+				cursor: pointer;
+				text-transform: uppercase;
 
-					&:hover {
-						background-color: $secondary-color-dark;
-					}
+				&:hover {
+					background-color: $secondary-color-dark;
 				}
+			}
+
+            .log-out-button {
+                background-color: $log-out-color;
+
+                &:hover {
+                    background-color: darken($log-out-color, 10%);
+                }
+            }
         }
     }
 </style>
