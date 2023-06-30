@@ -21,7 +21,7 @@
         let oldPassword = document.getElementById("password").value;
         let newPassword = document.getElementById("newPassword").value;
         if (oldPassword === newPassword) {
-            alert("Passwords can not be the same");
+            alert("Your new password cannot be the same as your old password!");
             return false;
         }
         return true;
