@@ -1,3 +1,32 @@
+<script>
+	import { goto } from '$app/navigation';
+
+	function checkLogin() {
+		let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+		//TODO: Check if password is correct
+		//if (password != passwordHash) {
+		//	alert("Passwords do not match.");
+		//	return;
+		//}
+
+		if (password.length < 6) {
+			alert("Passwords are at least 6 characters long.");
+			return;
+		}
+
+		if (username.length < 4) {
+			alert("Usernames are at least 4 characters long.");
+			return;
+		}
+
+		//TODO: login to account with provided info
+
+		goto('/', { replaceState: false });
+	}
+</script>
+
 <div class="front-page">
 	<h1>Login</h1>
 
@@ -9,6 +38,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your username"
+				id = "username"
 			/>
 			<input
 				type="password"
@@ -16,8 +46,9 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your password"
+				id = "password"
 			/>
-			<button>Login</button>
+			<button on:click={checkLogin}>Login</button>
 		</div>
 	</div>
 </div>
