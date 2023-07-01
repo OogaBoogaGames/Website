@@ -1,3 +1,32 @@
+<script>
+	import { goto } from '$app/navigation';
+
+	function checkSignup() {
+		let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+		let confirmPassword = document.getElementById("confirmPassword").value;
+
+		if (password != confirmPassword) {
+			alert("Passwords do not match.");
+			return;
+		}
+
+		if (password.length < 6) {
+			alert("Password must be at least 6 characters long.");
+			return;
+		}
+
+		if (username.length < 4) {
+			alert("Username must be at least 4 characters long.");
+			return;
+		}
+
+		//TODO: create account with provided info
+
+		goto('/login', { replaceState: false });
+    }
+</script>
+
 <div class="front-page">
 	<h1>Sign Up</h1>
 
@@ -9,6 +38,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your username"
+				id = "username"
 			/>
 			<input
 				type="password"
@@ -16,6 +46,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your password"
+				id = "password"
 			/>
             <input
                 type="password"
@@ -23,8 +54,9 @@
                 autocorrect="off"
                 autocomplete="off"
                 placeholder="Confirm your password"
+				id = "confirmPassword"
             />
-			<button>Create Account</button>
+			<button on:click={checkSignup}>Create Account</button>
 		</div>
 	</div>
 </div>

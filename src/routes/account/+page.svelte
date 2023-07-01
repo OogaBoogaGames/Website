@@ -13,6 +13,7 @@
             logOutStatus = "Confirm?";
         } else {
             //TODO: log out from account
+
             goto('/login', { replaceState: false });
         }
     }
@@ -20,11 +21,18 @@
     function checkPassword() {
         let oldPassword = document.getElementById("password").value;
         let newPassword = document.getElementById("newPassword").value;
+
         if (oldPassword === newPassword) {
             alert("Your new password cannot be the same as your old password!");
-            return false;
+            return;
         }
-        return true;
+
+        if (newPassword.length < 6) {
+            alert("Your new password must be at least 6 characters long!");
+            return;
+        }
+        
+        //TODO: update password in database
     }
 </script>
 
