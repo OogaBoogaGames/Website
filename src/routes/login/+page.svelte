@@ -5,7 +5,7 @@
 		let username = document.getElementById("username").value;
         let password = document.getElementById("password").value;
 
-		//TODO: Check if password is correct
+		//TODO: Send request to server to validate password hash with server password hash
 		//if (password != passwordHash) {
 		//	alert("Passwords do not match.");
 		//	return;
