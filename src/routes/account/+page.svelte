@@ -48,12 +48,12 @@
         
         <div class="settings-item">
             <h3>Change Username</h3>
-            <input type="text" placeholder="Epic User123">
+            <input type="text" placeholder="Epic User123" minlength = "4">
         </div>
         <div class="settings-item">
             <h3>Change Password</h3>
-            <input type="password" placeholder="Old Password" id="password">
-            <input type="password" placeholder="New Password" id="newPassword">
+            <input type="password" placeholder="Old Password" id="password" minlength = "6">
+            <input type="password" placeholder="New Password" id="newPassword" minlength = "6">
         </div>
         <div class="settings-item">
             <h3>Change Email</h3>

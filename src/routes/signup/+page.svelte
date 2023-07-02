@@ -38,6 +38,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your username"
+				minlength = "4"
 				id = "username"
 			/>
 			<input
@@ -46,6 +47,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your password"
+				minlength = "6"
 				id = "password"
 			/>
             <input
@@ -54,6 +56,7 @@
                 autocorrect="off"
                 autocomplete="off"
                 placeholder="Confirm your password"
+				minlength = "6"
 				id = "confirmPassword"
             />
 			<button on:click={checkSignup}>Create Account</button>
