@@ -11,6 +11,7 @@
     function logOutButton() {
         if (logOutStatus === "Logout") {
             logOutStatus = "Confirm?";
+            setTimeout(() => { logOutStatus = "Logout"; }, 3000);
         } else {
             //TODO: log out from account
 
