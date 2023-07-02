@@ -39,11 +39,16 @@
 
 <div class="accounts-menu">
     <div class="settings">
+        <h1>Account Info</h1>
+        <h3>Username: {account_info.username}</h3>
+        <h3>Email: {account_info.email}</h3>
+        <br>
+
         <h1>Account Settings</h1>
         
         <div class="settings-item">
             <h3>Change Username</h3>
-            <input type="text" placeholder="{account_info.username}">
+            <input type="text" placeholder="Epic User123">
         </div>
         <div class="settings-item">
             <h3>Change Password</h3>
@@ -52,10 +57,10 @@
         </div>
         <div class="settings-item">
             <h3>Change Email</h3>
-            <input type="email" placeholder="{account_info.email}">
+            <input type="email" placeholder="example@gmail.com">
         </div>
         <button on:click={checkPassword}>Save Changes</button>
-        <br>
+        <br><br>
 
         <button on:click={logOutButton} class="log-out-button">{logOutStatus}</button>
     </div>
