@@ -38,6 +38,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your username"
+				minlength = "4"
 				id = "username"
 			/>
 			<input
@@ -46,6 +47,7 @@
 				autocorrect="off"
 				autocomplete="off"
 				placeholder="Enter your password"
+				minlength = "6"
 				id = "password"
 			/>
 			<button on:click={checkLogin}>Login</button>
