@@ -13,6 +13,7 @@
 
 	:global(body) {
 		margin: 0;
+		// Temporary background.
 		background: url('https://media.discordapp.net/attachments/1121939717458514020/1122454022893338736/s.png');
 		background-position: center;
 		background-repeat: no-repeat;
@@ -22,13 +23,17 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+		font-family: Poppins, sans-serif;
 	}
 	.page-content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		height: 94vh;
+		height: 96vh;
+		max-height: calc(100vh - 40px);
 		font-family: Poppins, sans-serif;
+		overflow: auto;
+		scroll-behavior: smooth;
 	}
 </style>

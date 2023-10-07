@@ -23,6 +23,10 @@
 			character_index = 0;
 		}
 	}
+
+	function joinGame() {
+		//TODO: Join game
+	}
 </script>
 
 <div class="front-page">
@@ -56,7 +60,7 @@
 				placeholder="ENTER YOUR NAME"
 				maxlength={16}
 			/>
-			<button>Join Game</button>
+			<button on:click={joinGame}>Join Game</button>
 		</div>
 	</div>
 </div>
