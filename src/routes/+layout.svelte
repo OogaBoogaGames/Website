@@ -14,7 +14,7 @@
 	:global(body) {
 		margin: 0;
 		// Temporary background.
-		background: url('https://media.discordapp.net/attachments/1121939717458514020/1122454022893338736/s.png');
+		background: url('obg-background-placeholder.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;

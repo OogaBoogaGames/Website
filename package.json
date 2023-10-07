@@ -6,7 +6,6 @@
 		"dev": "vite dev",
 		"build": "vite build && cd build && bun install",
 		"preview": "vite preview",
-		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
@@ -15,7 +14,6 @@
 		"start": "cd build && bun run start"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.28.1",
 		"@sveltejs/kit": "^1.20.4",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
