@@ -27,11 +27,11 @@
 	}
 </script>
 
-<div class="front-page">
-	<h1>Login</h1>
+<div>
+	<h1 class="text-gray-500 text-5xl font-black mb-8 text-center [text-shadow:_2px_2px_4px_rgba(0_0_0_/40%)]">Login</h1>
 
-	<div class="form-container">
-		<div class="login-form">
+	<div class="flex justify-between items-center w-full max-w-[1200px]">
+		<div class="flex flex-col w-full gap-4">
 			<input
 				type="text"
 				autocapitalize="none"
@@ -40,6 +40,7 @@
 				placeholder="Enter your username"
 				minlength = "4"
 				id = "username"
+				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
 			/>
 			<input
 				type="password"
@@ -49,86 +50,9 @@
 				placeholder="Enter your password"
 				minlength = "6"
 				id = "password"
+				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
 			/>
-			<button on:click={checkLogin}>Login</button>
+			<button class="px-4 py-6 mt-6 rounded-lg text-xl font-semibold w-full max-w-xs self-center text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={checkLogin}>Login</button>
 		</div>
 	</div>
 </div>
-
-<style lang="scss">
-	$primary-color: #6a787e;
-	$secondary-color: #9bad8c;
-	$secondary-color-dark: #6d7a62;
-	$background-color: #363239;
-
-	.front-page {
-        width: 20vw;
-        max-width: 1200px;
-		padding: 5%;
-
-		h1 {
-			color: $primary-color;
-			font-size: clamp(0vw, 3rem, 8vw);
-			font-weight: 900;
-			margin-bottom: 2rem;
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-            text-align: center;
-		}
-
-		.form-container {
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-			max-width: 1200px;
-			margin: 0 auto;
-
-            .login-form {
-				display: flex;
-				flex-direction: column;
-				width: 100%;
-				gap: 1rem;
-
-				input {
-					border-radius: 12px;
-					width: 100%;
-                    max-width: 20rem;
-                    min-width: 10rem;
-					height: 6vw;
-                    max-height: 6.4rem;
-                    min-height: 3.2rem;
-                    align-self: center;
-					font-size: 1.2rem;
-					font-weight: 600;
-					background-color: $secondary-color;
-					text-align: center;
-					color: white;
-					border: none;
-				}
-
-				button {
-					margin-top: 1.5rem;
-					border-radius: 12px;
-					padding: 1rem 1.5rem;
-                    font-size: 1.2rem;
-					font-weight: 600;
-                    width: 100%;
-                    max-width: 20rem;
-                    min-width: 10rem;
-					height: 6vw;
-                    max-height: 6.4rem;
-                    min-height: 3.2rem;
-                    align-self: center;
-					background-color: $secondary-color;
-					color: white;
-					border: none;
-					cursor: pointer;
-					text-transform: uppercase;
-
-					&:hover {
-						background-color: $secondary-color-dark;
-					}
-				}
-			}
-		}
-	}
-</style>

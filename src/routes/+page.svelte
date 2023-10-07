@@ -29,15 +29,15 @@
 	}
 </script>
 
-<div class="front-page p-[5%]">
+<div>
 	<h1 class="text-gray-500 text-6xl font-black mb-8 text-center [text-shadow:_2px_2px_4px_rgba(0_0_0_/40%)]">Ooga Booga Games</h1>
 
 	<div class="form-container flex justify-between items-center w-full max-w-[1200px]">
 		<div class="flex flex-col justify-center items-center w-2/5 gap-2">
 			<img class="w-full rounded-lg" src={character_sprites[character_index]} alt="character" />
 			<div class="flex w-full gap-2">
-				<button class="rounded-lg p-4 text-xl font-black text-white cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={leftButtonClick}>←</button>
-				<button class="rounded-lg p-4 text-xl font-black text-white cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={rightButtonClick}>→</button>
+				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={leftButtonClick}>←</button>
+				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={rightButtonClick}>→</button>
 			</div>
 		</div>
 
