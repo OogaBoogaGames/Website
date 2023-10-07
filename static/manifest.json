@@ -1,0 +1,17 @@
+{
+	"short_name": "OBG",
+	"name": "OogaBoogaGames",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "favicon.webp",
+			"type": "image/webp",
+			"sizes": "128x128"
+		}
+	],
+	"background_color": "#9bad8c",
+	"theme_color": "#9bad8c",
+	"display": "standalone",
+	"scope": "/",
+	"description": "Party games from the stone age."
+}

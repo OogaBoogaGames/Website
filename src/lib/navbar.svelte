@@ -4,7 +4,7 @@
 
 <div class="navbar">
 	<a class="logo" href="/">
-		<img src="obg-logo-placeholder.png" alt="Logo" />
+		<img src="/obg-logo-placeholder.webp" alt="Logo" />
 	</a>
 
 	<div class="buttons">
