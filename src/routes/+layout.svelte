@@ -14,7 +14,7 @@
 	:global(body) {
 		margin: 0;
 		// Temporary background.
-		background: url('obg-background-placeholder.webp');
+		background: url('/obg-background-placeholder.webp');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
