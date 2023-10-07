@@ -29,19 +29,19 @@
 	}
 </script>
 
-<div class="front-page">
-	<h1>Ooga Booga Games</h1>
+<div class="front-page p-[5%]">
+	<h1 class="text-gray-500 text-6xl font-black mb-8 text-center [text-shadow:_2px_2px_4px_rgba(0_0_0_/40%)]">Ooga Booga Games</h1>
 
-	<div class="form-container">
-		<div class="character-form">
-			<img src={character_sprites[character_index]} alt="character" />
-			<div class="character-form-buttons">
-				<button on:click={leftButtonClick}>←</button>
-				<button on:click={rightButtonClick}>→</button>
+	<div class="form-container flex justify-between items-center w-full max-w-[1200px]">
+		<div class="flex flex-col justify-center items-center w-2/5 gap-2">
+			<img class="w-full rounded-lg" src={character_sprites[character_index]} alt="character" />
+			<div class="flex w-full gap-2">
+				<button class="rounded-lg p-4 text-xl font-black text-white cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={leftButtonClick}>←</button>
+				<button class="rounded-lg p-4 text-xl font-black text-white cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={rightButtonClick}>→</button>
 			</div>
 		</div>
 
-		<div class="room-form">
+		<div class="room-form flex flex-col w-[40%] gap-4">
 			<input
 				type="text"
 				autocapitalize="none"
@@ -49,6 +49,7 @@
 				autocomplete="off"
 				placeholder="ENTER ROOM CODE"
 				maxlength={8}
+				class="rounded-lg w-full h-12 text-lg font-semibold text-center text-stone-100 placeholder-stone-300 bg-[#9bad8c]"
 				bind:value={inputValue}
 				on:input={handleInput}
 			/>
@@ -59,108 +60,9 @@
 				autocomplete="off"
 				placeholder="ENTER YOUR NAME"
 				maxlength={16}
+				class="rounded-lg w-full h-12 text-lg font-semibold text-center text-stone-100 placeholder-stone-300 bg-[#9bad8c]"
 			/>
-			<button on:click={joinGame}>Join Game</button>
+			<button class="mt-8 py-6 px-4 rounded-lg text-xl font-semibold text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={joinGame}>Join Game</button>
 		</div>
 	</div>
 </div>
-
-<style lang="scss">
-	$primary-color: #6a787e;
-	$secondary-color: #9bad8c;
-	$secondary-color-dark: #6d7a62;
-	$background-color: #363239;
-
-	.front-page {
-		padding: 5%;
-
-		h1 {
-			color: $primary-color;
-			font-size: clamp(0vw, 3rem, 8vw);
-			font-weight: 900;
-			margin-bottom: 2rem;
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-			text-align: center;
-			font-size: 4rem;
-		}
-
-		.form-container {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-			max-width: 1200px;
-			margin: 0 auto;
-			.character-form {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				width: 40%;
-				gap: 0.4rem;
-
-				img {
-					width: 100%;
-					max-width: 300px;
-					border-radius: 12px;
-				}
-
-				.character-form-buttons {
-					display: flex;
-					width: 100%;
-					gap: 0.4rem;
-					button {
-						border-radius: 12px;
-						padding: 1rem;
-						font-size: 1.2rem;
-						font-weight: 900;
-						background-color: $secondary-color;
-						color: white;
-						border: none;
-						cursor: pointer;
-						width: 100%;
-						&:hover {
-							background-color: $secondary-color-dark;
-						}
-					}
-				}
-			}
-
-			.room-form {
-				display: flex;
-				flex-direction: column;
-				width: 40%;
-				gap: 1rem;
-
-				input {
-					border-radius: 12px;
-					width: 100%;
-					height: 3.2rem;
-					font-size: clamp(0rem, 1.1rem, 80%);
-					font-weight: 600;
-					background-color: $secondary-color;
-					text-align: center;
-					color: white;
-					border: none;
-				}
-
-				button {
-					margin-top: 2rem;
-					border-radius: 12px;
-					padding: 1rem 1.5rem;
-					font-size: 1.2rem;
-					font-weight: 600;
-					background-color: $secondary-color;
-					color: white;
-					border: none;
-					cursor: pointer;
-					text-transform: uppercase;
-
-					&:hover {
-						background-color: $secondary-color-dark;
-					}
-				}
-			}
-		}
-	}
-</style>

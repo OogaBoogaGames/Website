@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	margin: 0;
+	background: url('/obg-background-placeholder.webp');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	backdrop-filter: blur(4px);
+	font-family: Poppins, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	font-family: Poppins, sans-serif;
+}
