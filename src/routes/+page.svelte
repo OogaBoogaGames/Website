@@ -1,6 +1,13 @@
-<script>
-	let character_sprites = ['/sprite1.webp', '/sprite2.webp'];
+<script lang="ts">
+	import Caveman from "$lib/caveman/Caveman.svelte";
+	import CavemanImage from "$lib/caveman/CavemanImage.svelte";
+	let character_sprites = ['__obg__.caveman.1', '__obg__.caveman.2', '__obg__.caveman.3', '__obg__.caveman.4', '__obg__.caveman.5', '__obg__.caveman.6', '__obg__.caveman.7', '__obg__.caveman.8', '__obg__.caveman.9', '__obg__.caveman.10'];
 	let character_index = 0;
+
+	$: console.log(character_sprites[character_index])
+	
+	let packages: string[] = ["games.oogabooga.sprites"]
+	
 	let inputValue = '';
 
 	function handleInput(event) {
@@ -34,7 +41,9 @@
 
 	<div class="form-container flex justify-between items-center w-full max-w-[1200px]">
 		<div class="flex flex-col justify-center items-center w-2/5 gap-2">
-			<img class="w-full rounded-lg" src={character_sprites[character_index]} alt="character" />
+			<Caveman {packages} mirror="https://api.oogabooga.games/assets/bundle/">
+				<CavemanImage assetid={character_sprites[character_index]} packageid={packages[0]} class="w-[250px] rounded-lg" />
+			</Caveman>
 			<div class="flex w-full gap-2">
 				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={leftButtonClick}>←</button>
 				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={rightButtonClick}>→</button>
