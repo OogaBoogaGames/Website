@@ -1,15 +1,12 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 
-	function checkLogin() {
-		let username = document.getElementById("username").value;
-        let password = document.getElementById("password").value;
+	let usernameElem: HTMLInputElement;
+	let passwordElem: HTMLInputElement;
 
-		//TODO: Send request to server to validate password hash with server password hash
-		//if (password != passwordHash) {
-		//	alert("Passwords do not match.");
-		//	return;
-		//}
+	function checkLogin() {
+		let username = usernameElem.value;
+        let password = passwordElem.value;
 
 		if (password.length < 6) {
 			alert("Passwords are at least 6 characters long.");
@@ -39,7 +36,7 @@
 				autocomplete="off"
 				placeholder="Enter your username"
 				minlength = "4"
-				id = "username"
+				bind:this={usernameElem}
 				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
 			/>
 			<input
@@ -49,7 +46,7 @@
 				autocomplete="off"
 				placeholder="Enter your password"
 				minlength = "6"
-				id = "password"
+				bind:this={passwordElem}
 				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
 			/>
 			<button class="px-4 py-6 mt-6 rounded-lg text-xl font-semibold w-full max-w-xs self-center text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62] transition-colors" on:click={checkLogin}>Login</button>

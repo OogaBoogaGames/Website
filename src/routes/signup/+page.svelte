@@ -1,10 +1,15 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 
+	let usernameElem: HTMLInputElement;
+	let passwordElem: HTMLInputElement;
+	let confirmPasswordElem: HTMLInputElement;
+
+
 	function checkSignup() {
-		let username = document.getElementById('username').value;
-		let password = document.getElementById('password').value;
-		let confirmPassword = document.getElementById('confirmPassword').value;
+		let username = usernameElem.value;
+		let password = passwordElem.value;
+		let confirmPassword = confirmPasswordElem.value;
 
 		if (password != confirmPassword) {
 			alert('Passwords do not match.');
@@ -39,7 +44,7 @@
 				autocomplete="off"
 				placeholder="Enter your username"
 				minlength="4"
-				id="username"
+				bind:this={usernameElem}
 				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
 			/>
 			<input
@@ -49,9 +54,8 @@
 				autocomplete="off"
 				placeholder="Enter your password"
 				minlength="6"
-				id="password"
+				bind:this={passwordElem}
 				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
-
 			/>
 			<input
 				type="password"
@@ -60,9 +64,8 @@
 				autocomplete="off"
 				placeholder="Confirm your password"
 				minlength="6"
-				id="confirmPassword"
+				bind:this={confirmPasswordElem}
 				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
-
 			/>
 			<button class="px-4 py-6 mt-6 rounded-lg text-xl font-semibold w-full max-w-xs self-center text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62] transition-colors" on:click={checkSignup}>Create Account</button>
 		</div>
