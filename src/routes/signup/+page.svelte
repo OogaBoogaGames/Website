@@ -64,7 +64,7 @@
 				class="rounded-lg w-full max-w-xs self-center text-xl font-semibold h-[10vh] max-h-[6.4rem] min-h-[3.2rem] min-w-[10rem] bg-[#9bad8c] text-center text-stone-100 placeholder-stone-300"
 
 			/>
-			<button class="px-4 py-6 mt-6 rounded-lg text-xl font-semibold w-full max-w-xs self-center text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={checkSignup}>Create Account</button>
+			<button class="px-4 py-6 mt-6 rounded-lg text-xl font-semibold w-full max-w-xs self-center text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62] transition-colors" on:click={checkSignup}>Create Account</button>
 		</div>
 	</div>
 </div>
