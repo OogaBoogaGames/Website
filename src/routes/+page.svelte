@@ -45,8 +45,8 @@
 				<CavemanImage assetid={character_sprites[character_index]} packageid={packages[0]} class="w-[250px] rounded-lg" />
 			</Caveman>
 			<div class="flex w-full gap-2">
-				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={leftButtonClick}>←</button>
-				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={rightButtonClick}>→</button>
+				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62] transition-colors" on:click={leftButtonClick}>←</button>
+				<button class="rounded-lg p-4 text-xl font-black text-stone-100 cursor-pointer w-full bg-[#9bad8c] hover:bg-[#6d7a62] transition-colors" on:click={rightButtonClick}>→</button>
 			</div>
 		</div>
 
@@ -71,7 +71,7 @@
 				maxlength={16}
 				class="rounded-lg w-full h-12 text-lg font-semibold text-center text-stone-100 placeholder-stone-300 bg-[#9bad8c]"
 			/>
-			<button class="mt-8 py-6 px-4 rounded-lg text-xl font-semibold text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62]" on:click={joinGame}>Join Game</button>
+			<button class="mt-8 py-6 px-4 rounded-lg text-xl font-semibold text-stone-100 cursor-pointer uppercase bg-[#9bad8c] hover:bg-[#6d7a62] transition-colors" on:click={joinGame}>Join Game</button>
 		</div>
 	</div>
 </div>
