@@ -19,7 +19,7 @@
 			return;
 		}
 
-		fetch('https://api.oogabooga.games/', {
+		fetch('https://api.oogabooga.games/user/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
