@@ -11,14 +11,14 @@ export default defineConfig({
 	},
 	optimizeDeps: {
 		exclude: ['@oogaboogagames/flint']
-	},
-	server: {
-		proxy: {
-			'/api': {
-				target: 'http://localhost:8080',
-				changeOrigin: false,
-				rewrite: (path) => path.replace(/^\/api/, '')
-			}
-		}
 	}
+	// server: {
+	// 	proxy: {
+	// 		'/api': {
+	// 			target: 'http://localhost:8080',
+	// 			changeOrigin: false,
+	// 			rewrite: (path) => path.replace(/^\/api/, '')
+	// 		}
+	// 	}
+	// }
 });
