@@ -1,11 +1,32 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import { authStore } from '$lib/stores';
+
+	let usernameElem;
 
 	let logOutStatus = 'Logout';
 
-	let account_info = {
-		username: 'femboy',
-		email: 'email@gmail.com'
+	const acount_info = async (auth) => {
+		let [id, token] = auth.split(':');
+
+		let res = await fetch('https://api.oogabooga.games/user/info', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				id,
+				token
+			})
+		});
+
+		if (!res.ok) {
+			goto('/login', { replaceState: false });
+			return {};
+		}
+
+		return await res.json();
 	};
 
 	function logOutButton() {
@@ -15,7 +36,7 @@
 				logOutStatus = 'Logout';
 			}, 3000);
 		} else {
-			//TODO: log out from account
+			localStorage.removeItem('auth');
 
 			goto('/login', { replaceState: false });
 		}
@@ -37,13 +58,25 @@
 
 		//TODO: update password in database
 	}
+
+	let account_info = {};
+
+	onMount(async () => {
+		let auth = $authStore;
+		if (!auth || auth == ':') {
+			goto('/login', { replaceState: false });
+			return;
+		}
+		account_info = await acount_info(auth);
+		console.log(account_info);
+		usernameElem.innerHTML = 'Username: ' + account_info.username;
+	});
 </script>
 
 <div class="accounts-menu">
 	<div class="settings">
 		<h1>Account Info</h1>
-		<h3>Username: {account_info.username}</h3>
-		<h3>Email: {account_info.email}</h3>
+		<h3 bind:this={usernameElem}>Username: Deleted User</h3>
 		<br />
 
 		<h1>Account Settings</h1>
@@ -56,10 +89,6 @@
 			<h3>Change Password</h3>
 			<input type="password" placeholder="Old Password" id="password" minlength="6" />
 			<input type="password" placeholder="New Password" id="newPassword" minlength="6" />
-		</div>
-		<div class="settings-item">
-			<h3>Change Email</h3>
-			<input type="email" placeholder="example@gmail.com" />
 		</div>
 		<button on:click={checkPassword}>Save Changes</button>
 		<br /><br />
