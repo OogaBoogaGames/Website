@@ -7,9 +7,18 @@ export default defineConfig({
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
 	define: {
-        _global: ({})
-    },
+		_global: {}
+	},
 	optimizeDeps: {
 		exclude: ['@oogaboogagames/flint']
+	},
+	server: {
+		proxy: {
+			'/api': {
+				target: 'http://localhost:8080',
+				changeOrigin: false,
+				rewrite: (path) => path.replace(/^\/api/, '')
+			}
+		}
 	}
 });
