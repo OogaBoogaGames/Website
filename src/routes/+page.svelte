@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Caveman from '$lib/caveman/Caveman.svelte';
-	import CavemanImage from '$lib/caveman/CavemanImage.svelte';
+	import { Caveman, CavemanImage } from '@oogaboogagames/cavemanweb';
+
 	let character_sprites = [
 		'__obg__.caveman.1',
 		'__obg__.caveman.2',

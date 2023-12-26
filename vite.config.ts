@@ -10,7 +10,7 @@ export default defineConfig({
 		_global: {}
 	},
 	optimizeDeps: {
-		exclude: ['@oogaboogagames/flint']
+		exclude: ['@oogaboogagames/cavemanweb']
 	}
 	// server: {
 	// 	proxy: {
