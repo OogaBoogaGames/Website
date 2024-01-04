@@ -1,6 +1,7 @@
 <script lang="ts">
-	import Caveman from '$lib/caveman/Caveman.svelte';
-	import CavemanImage from '$lib/caveman/CavemanImage.svelte';
+	import { Caveman, CavemanImage } from '@oogaboogagames/cavemanweb';
+	import { base } from '$lib/api';
+
 	let character_sprites = [
 		'__obg__.caveman.1',
 		'__obg__.caveman.2',
@@ -57,7 +58,7 @@
 
 	<div class="form-container flex justify-between items-center w-full max-w-[1200px]">
 		<div class="flex flex-col justify-center items-center w-2/5 gap-2">
-			<Caveman {packages} mirror="https://api.oogabooga.games/assets/bundle/">
+			<Caveman {packages} mirror="{base}/assets/bundle/">
 				<CavemanImage
 					width="340"
 					height="400"

@@ -1,16 +1,24 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { authStore } from '$lib/stores';
+	import { base } from '$lib/api';
 
-	let usernameElem;
+	let usernameElem: HTMLHeadingElement;
+	let oldPasswordElem: HTMLInputElement;
+	let newPasswordElem: HTMLInputElement;
+
+	type AccoutInfo = {
+		username: string;
+		id: string;
+	};
 
 	let logOutStatus = 'Logout';
 
-	const acount_info = async (auth) => {
+	const fetch_acount_info = async (auth: String): Promise<AccoutInfo> => {
 		let [id, token] = auth.split(':');
 
-		let res = await fetch('https://api.oogabooga.games/user/info', {
+		let res = await fetch(`${base}/user/info`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -23,7 +31,12 @@
 
 		if (!res.ok) {
 			goto('/login', { replaceState: false });
-			return {};
+			// User is not logged in, so we don't need to return anything
+
+			return {
+				username: 'Deleted User',
+				id: '0'
+			};
 		}
 
 		return await res.json();
@@ -36,15 +49,15 @@
 				logOutStatus = 'Logout';
 			}, 3000);
 		} else {
-			localStorage.removeItem('auth');
+			$authStore = ':';
 
 			goto('/login', { replaceState: false });
 		}
 	}
 
 	function checkPassword() {
-		let oldPassword = document.getElementById('password').value;
-		let newPassword = document.getElementById('newPassword').value;
+		let oldPassword = oldPasswordElem.value;
+		let newPassword = newPasswordElem.value;
 
 		if (oldPassword === newPassword) {
 			alert('Your new password cannot be the same as your old password!');
@@ -59,7 +72,10 @@
 		//TODO: update password in database
 	}
 
-	let account_info = {};
+	let account_info = {
+		username: 'Deleted User',
+		id: '0'
+	};
 
 	onMount(async () => {
 		let auth = $authStore;
@@ -67,8 +83,7 @@
 			goto('/login', { replaceState: false });
 			return;
 		}
-		account_info = await acount_info(auth);
-		console.log(account_info);
+		account_info = await fetch_acount_info(auth);
 		usernameElem.innerHTML = 'Username: ' + account_info.username;
 	});
 </script>
@@ -87,8 +102,8 @@
 		</div>
 		<div class="settings-item">
 			<h3>Change Password</h3>
-			<input type="password" placeholder="Old Password" id="password" minlength="6" />
-			<input type="password" placeholder="New Password" id="newPassword" minlength="6" />
+			<input type="password" placeholder="Old Password" bind:this={oldPasswordElem} minlength="6" />
+			<input type="password" placeholder="New Password" bind:this={newPasswordElem} minlength="6" />
 		</div>
 		<button on:click={checkPassword}>Save Changes</button>
 		<br /><br />
@@ -96,6 +111,8 @@
 		<button on:click={logOutButton} class="log-out-button">{logOutStatus}</button>
 	</div>
 </div>
+
+<!-- TODO: Rewrite styles in Tailwind -->
 
 <style lang="scss">
 	$primary-color: #6a787e;

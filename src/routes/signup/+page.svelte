@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$lib/api';
 
 	let usernameElem: HTMLInputElement;
 	let passwordElem: HTMLInputElement;
@@ -25,7 +26,7 @@
 			return;
 		}
 
-		fetch('https://api.oogabooga.games/user/create', {
+		fetch(`${base}/user/create`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

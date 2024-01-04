@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$lib/api';
 	import { authStore } from '$lib/stores';
 
 	let usernameElem: HTMLInputElement;
@@ -19,7 +20,7 @@
 			return;
 		}
 
-		fetch('https://api.oogabooga.games/user/login', {
+		fetch(`${base}/user/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
